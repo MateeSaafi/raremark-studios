@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#faf8f3" />
+  <rect x="0" y="0" width="12" height="630" fill="#4f46e5" />
+
+  <!-- Brand mark + studio name -->
+  <g transform="translate(100 86) scale(2.3333)">
+    <rect width="24" height="24" rx="6" fill="#4f46e5" />
+    <rect x="6.75" y="8.4" width="10.5" height="1.7" rx="0.85" fill="#ffffff" fill-opacity="0.92" />
+    <rect x="6.75" y="11.9" width="7" height="2.3" rx="1.15" fill="#fceba6" />
+    <rect x="6.75" y="15.5" width="10.5" height="1.7" rx="0.85" fill="#ffffff" fill-opacity="0.55" />
+  </g>
+  <text x="172" y="124" font-family="'Segoe UI', Arial, sans-serif" font-size="27" font-weight="600" fill="#44423c">Raremark Studios</text>
+
+  <!-- Eyebrow -->
+  <text x="100" y="292" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="600" letter-spacing="3" fill="#4f46e5">MINIMALIST PDF READER · ANDROID</text>
+
+  <!-- Headline -->
+  <text x="97" y="392" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="600" fill="#1c1b18">Research Buddy</text>
+
+  <!-- Tagline -->
+  <text x="100" y="468" font-family="Georgia, 'Times New Roman', serif" font-size="42" fill="#44423c">Understand any PDF, the moment you get stuck.</text>
+
+  <!-- Highlight motif -->
+  <rect x="100" y="520" width="560" height="16" rx="8" fill="#ebe6db" />
+  <rect x="100" y="548" width="680" height="16" rx="8" fill="#fceba6" />
+  <rect x="100" y="576" width="440" height="16" rx="8" fill="#ebe6db" />
+
+  <!-- URL -->
+  <text x="1120" y="584" text-anchor="end" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#6c6860">raremark.studio</text>
+</svg>

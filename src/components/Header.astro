@@ -1,0 +1,46 @@
+---
+import Brandmark from './Brandmark.astro';
+import { SITE, NAV } from '../consts';
+
+// Normalize for active-link matching (handles trailing slashes).
+const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
+---
+
+<header class="border-b border-line/70">
+  <div class="shell flex h-16 items-center justify-between gap-4">
+    <a
+      href="/"
+      class="flex shrink-0 items-center gap-2.5 rounded-lg"
+      aria-label={`${SITE.name} — home`}
+    >
+      <Brandmark class="h-7 w-7" />
+      <span class="font-serif text-[15px] font-medium tracking-tight text-ink sm:text-lg">
+        {SITE.name}
+      </span>
+    </a>
+
+    <nav aria-label="Primary">
+      <ul class="flex items-center gap-4 text-sm sm:gap-7">
+        {
+          NAV.map(({ href, label }) => {
+            const active = path === href;
+            return (
+              <li>
+                <a
+                  href={href}
+                  aria-current={active ? 'page' : undefined}
+                  class:list={[
+                    'transition-colors hover:text-ink',
+                    active ? 'font-medium text-ink' : 'text-muted',
+                  ]}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

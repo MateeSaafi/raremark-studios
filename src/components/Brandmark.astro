@@ -1,0 +1,22 @@
+---
+// The Raremark mark: a page with one line "explained" (amber highlight) —
+// a tiny nod to Research Buddy's swipe-to-explain gesture.
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-7 w-7' } = Astro.props;
+---
+
+<svg
+  class={className}
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+  aria-hidden="true"
+  role="img"
+>
+  <rect x="2" y="2" width="20" height="20" rx="6" fill="var(--color-accent)" />
+  <rect x="6.75" y="8.4" width="10.5" height="1.7" rx="0.85" fill="#ffffff" fill-opacity="0.92" />
+  <rect x="6.75" y="11.9" width="7" height="2.3" rx="1.15" fill="var(--color-highlight)" />
+  <rect x="6.75" y="15.5" width="10.5" height="1.7" rx="0.85" fill="#ffffff" fill-opacity="0.55" />
+</svg>

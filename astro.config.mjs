@@ -1,0 +1,24 @@
+// @ts-check
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+import tailwindcss from '@tailwindcss/vite';
+
+// https://astro.build/config
+export default defineConfig({
+  // Used for canonical URLs, sitemap, and absolute OG image URLs.
+  // TODO: confirm the production domain before launch.
+  site: 'https://raremark.studio',
+  integrations: [mdx()],
+  vite: {
+    // Cast to any: @tailwindcss/vite is typed against its own nested Vite copy,
+    // which trips `astro check`'s dual-Vite type comparison. Harmless at runtime.
+    plugins: [/** @type {any} */ (tailwindcss())],
+  },
+  // Static output (default). Deploys to Vercel / Cloudflare Pages with no adapter.
+  output: 'static',
+  build: {
+    // Emit /privacy/index.html instead of /privacy.html so URLs work
+    // identically on Vercel and Cloudflare Pages.
+    format: 'directory',
+  },
+});

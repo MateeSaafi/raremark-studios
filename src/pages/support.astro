@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { EMAIL, SITE } from '../consts';
+
+const faqs = [
+  {
+    q: 'How do explanations work?',
+    a: `When you select text and ask for help, ${SITE.product} sends just that selection to our backend, which uses Google's Gemini to write a plain-language explanation and sends it back. Your PDF never leaves your device.`,
+  },
+  {
+    q: 'Do you upload my PDFs?',
+    a: 'No. Your files stay on your phone. The only thing that leaves your device is the specific text you choose to explain.',
+  },
+  {
+    q: 'What files can I open?',
+    // CONFIRM: list any other supported formats (EPUB, etc.) once decided.
+    a: 'PDFs. Research Buddy is a focused PDF reader, so PDF is what it opens.',
+  },
+  {
+    q: 'An explanation looks wrong. What should I do?',
+    a: 'AI explanations can be incomplete or mistaken — always double-check anything important. If something is consistently off, email us a screenshot and we’ll look into it.',
+  },
+  {
+    q: 'Is there an iPhone version?',
+    // CONFIRM: update with your real roadmap.
+    a: 'Not yet — we’re starting on Android. If you’d like iOS, email us; it helps us prioritize.',
+  },
+  {
+    q: 'How much does it cost?',
+    // CONFIRM: replace with real pricing. Pointing at the listing avoids committing here.
+    a: 'Check the Google Play listing for current pricing.',
+  },
+  {
+    q: 'How do I delete my data?',
+    a: 'There’s nothing to delete on our side in normal use — there are no accounts, and we don’t keep your selections after answering. See the Privacy Policy for details.',
+    link: { href: '/privacy', label: 'Privacy Policy' },
+  },
+];
+---
+
+<BaseLayout
+  title="Support"
+  description={`Get help with ${SITE.product} — contact us and find answers to common questions.`}
+>
+  <section class="mx-auto w-full max-w-2xl px-5 py-14 sm:px-6 sm:py-20">
+    <header>
+      <h1 class="font-serif text-4xl font-medium tracking-tight sm:text-[2.75rem]">Support</h1>
+      <p class="mt-4 text-lg leading-relaxed text-ink-soft">
+        We’re a small studio and we read every message. Here’s how to reach us —
+        and a few answers to the questions we hear most.
+      </p>
+    </header>
+
+    <!-- Contact card -->
+    <div class="mt-10 rounded-2xl border border-line bg-surface p-6 sm:p-8">
+      <h2 class="font-serif text-2xl font-medium">Email us</h2>
+      <p class="mt-2 text-muted">
+        The fastest way to reach a human. For bugs, tell us your phone model and
+        Android version — it helps a lot.
+      </p>
+      <a href={`mailto:${EMAIL.support}`} class="btn-primary mt-5">
+        Email {EMAIL.support}
+      </a>
+      <p class="mt-3 text-sm text-muted">We usually reply within a couple of business days.</p>
+    </div>
+
+    <!-- FAQ -->
+    <h2 class="mt-14 font-serif text-2xl font-medium">Frequently asked</h2>
+    <div class="mt-4">
+      {
+        faqs.map((f) => (
+          <details class="group border-b border-line py-4">
+            <summary class="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-medium text-ink [&::-webkit-details-marker]:hidden">
+              <span>{f.q}</span>
+              <svg
+                class="h-5 w-5 shrink-0 text-muted transition-transform group-open:rotate-180"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </summary>
+            <div class="mt-3 leading-relaxed text-muted">
+              {f.a}
+              {f.link && (
+                <>
+                  {' '}
+                  <a href={f.link.href} class="font-medium text-accent hover:text-accent-strong">
+                    {f.link.label}
+                  </a>
+                  .
+                </>
+              )}
+            </div>
+          </details>
+        ))
+      }
+    </div>
+
+    <p class="mt-12 text-muted">
+      Still stuck? Email <a href={`mailto:${EMAIL.support}`} class="font-medium text-accent hover:text-accent-strong">{EMAIL.support}</a> and we’ll help.
+    </p>
+  </section>
+</BaseLayout>

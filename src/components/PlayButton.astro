@@ -1,0 +1,46 @@
+---
+import { PLAY_STORE_URL, IS_LIVE } from '../consts';
+
+interface Props {
+  /** Extra classes on the wrapper (e.g. alignment). */
+  class?: string;
+  /** Show the "coming soon" caption while the app isn't live. Default true. */
+  caption?: boolean;
+}
+const { class: className = '', caption = true } = Astro.props;
+
+const live = IS_LIVE && PLAY_STORE_URL !== '#';
+---
+
+<div class:list={['flex flex-col gap-2', className]}>
+  <a
+    href={PLAY_STORE_URL}
+    aria-disabled={live ? undefined : 'true'}
+    class:list={[
+      'group inline-flex w-fit items-center gap-3 rounded-xl bg-ink px-5 py-2.5 text-white shadow-sm transition-transform hover:-translate-y-0.5 focus-visible:outline-2 focus-visible:outline-offset-2',
+      !live && 'cursor-default opacity-90 hover:translate-y-0',
+    ]}
+  >
+    <!-- Simplified Play glyph. Swap in the official Google Play badge before launch. -->
+    <svg class="h-6 w-6 shrink-0" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path
+        d="M4 3.2c0-.7.74-1.15 1.36-.82l14 7.3c.66.35.66 1.3 0 1.64l-14 7.3A.94.94 0 0 1 4 17.8V3.2Z"
+        fill="currentColor"
+      />
+    </svg>
+    <span class="flex flex-col text-left leading-none">
+      <span class="text-[10px] font-medium uppercase tracking-[0.14em] text-white/70">
+        Get it on
+      </span>
+      <span class="-mt-0.5 text-lg font-semibold tracking-tight">Google Play</span>
+    </span>
+  </a>
+
+  {
+    caption && !live && (
+      <p class="text-sm text-muted">
+        Coming soon to Android — link goes live at launch.
+      </p>
+    )
+  }
+</div>

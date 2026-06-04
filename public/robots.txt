@@ -1,0 +1,6 @@
+# https://developers.google.com/search/docs/crawling-indexing/robots/intro
+# Allow all crawlers full access, and point them at the sitemap.
+User-agent: *
+Allow: /
+
+Sitemap: https://raremark.studio/sitemap-index.xml

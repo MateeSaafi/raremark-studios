@@ -26,6 +26,16 @@ const {
 const fullTitle = title.includes(SITE.name) ? title : `${title} · ${SITE.name}`;
 const canonical = absoluteUrl(Astro.url.pathname);
 const ogImage = absoluteUrl(image);
+
+// Organization structured data — helps Google understand the studio as an entity.
+const orgSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.description,
+  logo: absoluteUrl('/favicon.svg'),
+};
 ---
 
 <!doctype html>
@@ -61,6 +71,9 @@ const ogImage = absoluteUrl(image);
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured data -->
+    <script type="application/ld+json" is:inline set:html={JSON.stringify(orgSchema)} />
   </head>
 
   <body class="flex min-h-dvh flex-col">

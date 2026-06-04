@@ -1,14 +1,15 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import mdx from '@astrojs/mdx';
+import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  // Used for canonical URLs, sitemap, and absolute OG image URLs.
+  // Used for canonical URLs, the sitemap, and absolute OG image URLs.
   // TODO: confirm the production domain before launch.
   site: 'https://raremark.studio',
-  integrations: [mdx()],
+  integrations: [mdx(), sitemap()],
   vite: {
     // Cast to any: @tailwindcss/vite is typed against its own nested Vite copy,
     // which trips `astro check`'s dual-Vite type comparison. Harmless at runtime.

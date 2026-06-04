@@ -1,89 +1,93 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import Gestures from '../components/Gestures.astro';
-import PlayButton from '../components/PlayButton.astro';
+import FeaturedProduct from '../components/FeaturedProduct.astro';
+import { RESEARCH_BUDDY_URL } from '../consts';
 
-// Placeholder slots — drop real PNGs into public/screenshots/ and swap these.
-const shots = [
-  { label: 'Reading view' },
-  { label: 'Explain a line' },
-  { label: 'Word definition' },
+const principles = [
+  {
+    title: 'Earn the screen',
+    body: 'Every element has to justify the attention it costs, or it doesn’t ship. We’d rather make one tool you trust than ten you tolerate.',
+  },
+  {
+    title: 'Quiet by default',
+    body: 'No feeds to fall into, no streaks to keep, no notifications begging you back. You come to it; it doesn’t come to you.',
+  },
+  {
+    title: 'Your reading is yours',
+    body: 'Your documents stay on your device. We send only what you choose to ask about, keep no more than we need, and never turn your reading into a product.',
+  },
 ];
 ---
 
-<BaseLayout
-  title="Research Buddy — Understand any PDF"
-  description="Research Buddy is a minimalist PDF reader for Android with AI explanations built into the page. Long-press to define, swipe to explain — without losing your place."
->
+<BaseLayout title="Raremark Studios — calm, focused tools for people who read closely">
   <Hero />
 
-  <!-- What it is -->
+  <!-- What we believe -->
   <section class="shell border-t border-line/70 py-16 sm:py-24">
     <div class="max-w-2xl">
-      <p class="text-xs font-medium uppercase tracking-[0.14em] text-accent">What it is</p>
-      <div class="mt-5 space-y-6 font-serif text-xl leading-relaxed text-ink-soft">
+      <p class="text-xs font-medium uppercase tracking-[0.14em] text-accent">What we believe</p>
+      <h2 class="mt-3 text-3xl font-medium tracking-tight sm:text-4xl">
+        Most software wants your attention. Ours wants to give it back.
+      </h2>
+      <div class="mt-6 space-y-6 font-serif text-xl leading-relaxed text-ink-soft">
         <p>
-          Research Buddy is a PDF reader built for <em class="text-ink not-italic">understanding</em>,
-          not just viewing. It opens your files fast, gets out of the way, and
-          keeps a capable AI reader one gesture away — so dense papers,
-          textbooks, and contracts stop being a wall of text.
+          Most apps are built to hold you. They nudge, badge, and interrupt,
+          then call the hours you lost ‘engagement.’ We got tired of software
+          that treats a quiet mind as a surface to interrupt — so we build the
+          opposite: deliberate tools that do their one job, then step back out
+          of the page.
         </p>
         <p>
-          It’s deliberately small. No sign-up, no feed, no settings maze. Your
-          documents stay on your device; only the specific text you choose to
-          explain is sent to our service to generate an answer. That’s the
-          whole deal.
+          We read for a living, and we make tools the way we’d want them made —
+          quietly, and only after we’ve felt the problem ourselves. Nothing here
+          blinks for a second of you that wasn’t offered. If we wouldn’t keep it
+          on our own phones, we don’t ship it.
         </p>
       </div>
     </div>
-  </section>
 
-  <!-- How it works -->
-  <Gestures />
-
-  <!-- A closer look (screenshot placeholders) -->
-  <section class="shell border-t border-line/70 py-16 sm:py-24">
-    <header class="max-w-2xl">
-      <p class="text-xs font-medium uppercase tracking-[0.14em] text-accent">A closer look</p>
-      <h2 class="mt-3 text-3xl font-medium tracking-tight sm:text-4xl">See it on the page.</h2>
-      <p class="mt-4 text-lg leading-relaxed text-ink-soft">
-        Real screenshots land here closer to launch. The shape is the point:
-        your document, full-bleed, with help a gesture away.
-      </p>
-    </header>
-
-    <!-- Horizontal, no-JS scroll strip. Replace frames with real screenshots. -->
-    <div class="mt-10 -mx-5 flex snap-x gap-4 overflow-x-auto px-5 pb-4 sm:mx-0 sm:px-0">
+    <div class="mt-12 grid gap-5 sm:grid-cols-3">
       {
-        shots.map((s) => (
-          <div class="snap-start">
-            <div class="flex aspect-[9/19] w-[190px] shrink-0 flex-col items-center justify-center gap-3 rounded-[1.8rem] border-2 border-dashed border-line bg-surface text-muted">
-              <svg class="h-7 w-7" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-                <rect x="3" y="3" width="18" height="18" rx="3" />
-                <circle cx="8.5" cy="8.5" r="1.5" />
-                <path d="m21 15-5-5L5 21" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-              <span class="text-xs font-medium">{s.label}</span>
-            </div>
+        principles.map((p) => (
+          <div class="rounded-2xl border border-line bg-surface p-6">
+            <h3 class="font-serif text-lg font-medium text-ink">{p.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
           </div>
         ))
       }
     </div>
   </section>
 
-  <!-- Closing CTA -->
+  <!-- First from the studio: Research Buddy -->
+  <FeaturedProduct />
+
+  <!-- What's next -->
+  <section class="shell border-t border-line/70 py-14 sm:py-16">
+    <p class="mx-auto max-w-2xl text-center font-serif text-xl leading-relaxed text-muted sm:text-2xl">
+      Research Buddy is the first of these. A few more tools are quietly taking
+      shape, and we’ll show them when they’re ready — not before.
+    </p>
+  </section>
+
+  <!-- Closing -->
   <section class="shell pb-4">
     <div class="rounded-3xl bg-accent-soft px-6 py-14 text-center ring-1 ring-accent/10 sm:px-12">
       <h2 class="mx-auto max-w-xl text-3xl font-medium tracking-tight sm:text-4xl">
-        Read your next PDF with a buddy.
+        Read closely. We’ll stay out of the way.
       </h2>
-      <p class="mx-auto mt-4 max-w-md text-lg text-ink-soft">
-        No account. No tracking. No clutter — just you, the page, and answers
-        when you want them.
+      <p class="mx-auto mt-4 max-w-lg text-lg text-ink-soft">
+        Research Buddy is the first thing we’ve made. Have a look, then tell us
+        what it gets right and where it falls short — we read every note.
       </p>
       <div class="mt-8 flex justify-center">
-        <PlayButton caption={false} />
+        <a href={RESEARCH_BUDDY_URL} class="btn-primary">
+          Visit Research Buddy
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7" />
+            <path d="M7 7h10v10" />
+          </svg>
+        </a>
       </div>
     </div>
   </section>

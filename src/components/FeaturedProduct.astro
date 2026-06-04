@@ -1,0 +1,53 @@
+---
+// Compact "featured product" block for the studio homepage. Built so future
+// products can reuse the same shape. Research Buddy lives on its own site; this
+// section links OUT to it.
+import DeviceMockup from './DeviceMockup.astro';
+import { RESEARCH_BUDDY_URL } from '../consts';
+---
+
+<section class="shell border-t border-line/70 py-16 sm:py-24">
+  <div class="grid items-center gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
+    <!-- Visual -->
+    <div class="relative order-last flex justify-center lg:order-first lg:justify-start">
+      <div
+        class="pointer-events-none absolute -z-10 h-72 w-72 rounded-full bg-accent-soft blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+      <DeviceMockup class="rotate-[-1.5deg]" />
+    </div>
+
+    <!-- Copy -->
+    <div class="max-w-xl">
+      <p class="text-xs font-medium uppercase tracking-[0.14em] text-accent">First from the studio</p>
+      <h2 class="mt-3 font-serif text-3xl font-medium tracking-tight sm:text-4xl">Research Buddy</h2>
+
+      <p class="mt-5 text-lg leading-relaxed text-ink-soft">
+        A minimalist PDF reader for Android that answers back. Long-press a word
+        to define it, swipe a line to explain it, sweep a passage to unpack it —
+        in plain language, right in the margin. The page stays the page.
+      </p>
+
+      <p class="mt-4 leading-relaxed text-muted">
+        You’re reading something dense on your phone — the paper, the contract,
+        the chapter you’ll go through twice — hit a line you don’t get, and
+        asking used to mean leaving: a browser tab, a chatbot, a dictionary. By
+        the time you’re back, you’ve lost your place and your focus to the
+        app-switching shuffle. Research Buddy keeps the answer in the page, so
+        you never go.
+      </p>
+
+      <div class="mt-7">
+        <a href={RESEARCH_BUDDY_URL} class="btn-primary">
+          Visit Research Buddy
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7" />
+            <path d="M7 7h10v10" />
+          </svg>
+        </a>
+        <p class="mt-3 text-sm text-muted">Coming soon to Google Play.</p>
+      </div>
+    </div>
+  </div>
+</section>

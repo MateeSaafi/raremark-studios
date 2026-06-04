@@ -1,49 +1,23 @@
 ---
-import PlayButton from './PlayButton.astro';
-import DeviceMockup from './DeviceMockup.astro';
-import { SITE } from '../consts';
+// Studio hero — about Raremark Studios, not any single product.
 ---
 
-<section class="shell grid items-center gap-12 pb-8 pt-14 sm:pt-20 lg:grid-cols-[1.05fr_0.95fr] lg:gap-8 lg:pb-12 lg:pt-24">
-  <!-- Copy -->
-  <div class="max-w-xl">
+<section class="shell pb-10 pt-16 sm:pt-24 lg:pb-16 lg:pt-28">
+  <div class="max-w-3xl">
     <p class="inline-flex items-center gap-2 rounded-full border border-line bg-surface px-3 py-1 text-xs font-medium uppercase tracking-[0.12em] text-muted">
       <span class="h-1.5 w-1.5 rounded-full bg-accent"></span>
-      {SITE.product} · for Android
+      An independent studio of two
     </p>
 
-    <h1 class="mt-6 font-serif text-[2.6rem] font-medium leading-[1.04] tracking-tight text-ink sm:text-5xl lg:text-[3.4rem]">
-      Understand
-      <mark class="box-decoration-clone rounded-md bg-highlight/80 px-1.5 text-ink">any PDF</mark>,
-      the moment you get stuck.
+    <h1 class="mt-7 font-serif text-[2.7rem] font-medium leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[4rem]">
+      We build for the kind of attention
+      <mark class="box-decoration-clone rounded-md bg-highlight/80 px-1.5 text-ink">worth keeping</mark>.
     </h1>
 
-    <p class="mt-6 text-lg leading-relaxed text-ink-soft">
-      A minimalist PDF reader that keeps AI out of your way — until you need it.
-      Long-press a word to define it, swipe across a line to explain it, sweep
-      down a passage to unpack it. You never leave the page.
+    <p class="mt-7 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl">
+      We’re two people who read closely for a living, making calm tools for
+      others who do the same — software that earns its place on your screen,
+      then gets out of your way.
     </p>
-
-    <div class="mt-8">
-      <PlayButton />
-    </div>
-
-    <p class="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-sm text-muted">
-      <span>No account</span>
-      <span aria-hidden="true">·</span>
-      <span>No tracking</span>
-      <span aria-hidden="true">·</span>
-      <span>Your files stay on your phone</span>
-    </p>
-  </div>
-
-  <!-- Mockup -->
-  <div class="relative flex justify-center lg:justify-end">
-    <div
-      class="pointer-events-none absolute -z-10 h-72 w-72 rounded-full bg-accent-soft blur-3xl"
-      aria-hidden="true"
-    >
-    </div>
-    <DeviceMockup class="rotate-[1.5deg]" />
   </div>
 </section>

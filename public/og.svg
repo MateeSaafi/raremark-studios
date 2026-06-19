@@ -26,5 +26,5 @@
   <rect x="100" y="576" width="440" height="16" rx="8" fill="#ebe6db" />
 
   <!-- URL -->
-  <text x="1120" y="584" text-anchor="end" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#6c6860">raremark.studio</text>
+  <text x="1120" y="584" text-anchor="end" font-family="'Segoe UI', Arial, sans-serif" font-size="24" fill="#6c6860">raremark-studios.vercel.app</text>
 </svg>

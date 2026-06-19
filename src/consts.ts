@@ -10,8 +10,8 @@ export const SITE = {
   name: 'Raremark Studios',
   /** The product this site sells. */
   product: 'Research Buddy',
-  /** Production URL — must match `site` in astro.config.mjs. TODO: confirm domain. */
-  url: 'https://raremark.studio',
+  /** Production URL — must match `site` in astro.config.mjs. Currently the Vercel launch URL. */
+  url: 'https://raremark-studios.vercel.app',
   /** Default meta description for pages that don't set their own. */
   description:
     'Raremark Studios is a small independent studio building calm tools for people who read closely — software that earns its place on your screen, then gets out of your way.',

@@ -7,8 +7,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   // Used for canonical URLs, the sitemap, and absolute OG image URLs.
-  // TODO: confirm the production domain before launch.
-  site: 'https://raremark.studio',
+  // Launch URL (Vercel). When a custom domain is connected, change it here AND
+  // in src/consts.ts (SITE.url), then re-run `npm run og`.
+  site: 'https://raremark-studios.vercel.app',
   integrations: [mdx(), sitemap()],
   vite: {
     // Cast to any: @tailwindcss/vite is typed against its own nested Vite copy,

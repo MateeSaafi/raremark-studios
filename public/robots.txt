@@ -3,4 +3,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://raremark.studio/sitemap-index.xml
+Sitemap: https://raremark-studios.vercel.app/sitemap-index.xml

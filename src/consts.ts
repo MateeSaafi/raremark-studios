@@ -20,12 +20,12 @@ export const SITE = {
 } as const;
 
 /**
- * Contact addresses. TODO: replace with real inboxes you actually monitor.
+ * Contact address. Small studio — one inbox handles both support and privacy.
  * (Play Store requires a working support contact.)
  */
 export const EMAIL = {
-  support: 'support@raremark.studio',
-  privacy: 'privacy@raremark.studio',
+  support: 'raremarkstudios@gmail.com',
+  privacy: 'raremarkstudios@gmail.com',
 } as const;
 
 /**
@@ -39,9 +39,10 @@ export const IS_LIVE = false;
 
 /**
  * Research Buddy's own marketing site. This studio site features the product
- * and links OUT to it. TODO: paste the real Research Buddy site URL.
+ * and links OUT to it via the "Visit Research Buddy" CTAs.
+ * NOTE: this is a duckdns *test* URL — swap for the production URL before launch.
  */
-export const RESEARCH_BUDDY_URL = '#';
+export const RESEARCH_BUDDY_URL = 'https://researchbuddy-test.duckdns.org/';
 
 /** Primary nav + footer links. */
 export const NAV = [
